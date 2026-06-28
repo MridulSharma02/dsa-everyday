@@ -4,7 +4,7 @@
 
 ---
 
-![Problems Solved](https://img.shields.io/badge/Problems_Solved-20-00D9FF?style=for-the-badge&logo=leetcode&logoColor=white)
+![Problems Solved](https://img.shields.io/badge/Problems_Solved-21-00D9FF?style=for-the-badge&logo=leetcode&logoColor=white)
 ![Streak](https://img.shields.io/badge/Automated_Daily_Streak-Active_🔥-FF6B35?style=for-the-badge)
 ![Languages](https://img.shields.io/badge/Languages-Python_%7C_C++_%7C_MySQL-9B59B6?style=for-the-badge)
 ![Profile](https://img.shields.io/badge/LeetCode-MridulSharma338-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)
