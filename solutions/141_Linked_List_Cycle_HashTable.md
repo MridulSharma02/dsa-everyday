@@ -1,0 +1,138 @@
+<div align="center">
+
+# 🗂️ 141. Linked List Cycle
+
+*Pushed on October 20, 2026 · Problem #135 in my journey*
+
+</div>
+
+---
+
+## 📊 Problem Info
+
+| 🏷️ Field             | 📋 Details                |
+|----------------------|---------------------------|
+| **Difficulty**       | 🟢 Easy |
+| **Topic**            | 🗂️ Hash Table   |
+| **Time Complexity**  | ⏱️ `O(n)`             |
+| **Space Complexity** | 🧠 `O(n)`            |
+| **Acceptance Rate**  | ✅ 55.2%              |
+| **Language**         | 🔠 C++         |
+
+**Tags:** `Hash Table` `Linked List` `Two Pointers` `Floyd's Cycle Finding Algorithm`
+
+---
+
+## 🧩 Problem Description
+
+Given `head`, the head of a linked list, determine if the linked list has a cycle in it.
+
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the `next` pointer. Internally, `pos` is used to denote the index of the node that tail&#39;s `next` pointer is connected to. **Note that `pos` is not passed as a parameter**.
+
+
+Return `true`* if there is a cycle in the linked list*. Otherwise, return `false`.
+
+
+ 
+
+<strong class="example">Example 1:**
+
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" style="width: 300px; height: 97px; margin-top: 8px; margin-bottom: 8px;" />
+
+**Input:** head = [3,2,0,-4], pos = 1
+**Output:** true
+**Explanation:** There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+
+
+<strong class="example">Example 2:**
+
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png" style="width: 141px; height: 74px;" />
+
+**Input:** head = [1,2], pos = 0
+**Output:** true
+**Explanation:** There is a cycle in the linked list, where the tail connects to the 0th node.
+
+
+<strong class="example">Example 3:**
+
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png" style="width: 45px; height: 45px;" />
+
+**Input:** head = [1], pos = -1
+**Output:** false
+**Explanation:** There is no cycle in the linked list.
+
+
+ 
+
+**Constraints:**
+
+
+
+	- The number of the nodes in the list is in the range `[0, 10^4]`.
+	- `-10^5 <= Node.val <= 10^5`
+	- `pos` is `-1` or a **valid index** in the linked-list.
+
+
+ 
+
+**Follow up:** Can you solve it using `O(1)` (i.e. constant) memory?
+
+---
+
+## 💻 My Solution
+
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* slow=head;
+        ListNode* fast=head;
+        while(fast!=nullptr && fast->next!=nullptr){
+            slow=slow->next;
+            fast=fast->next->next;
+            if (slow==fast){
+                return true;
+            }
+        }
+
+        return false;
+    }
+};
+
+```
+
+---
+
+## 🧪 Sample Test Case
+
+```
+[3,2,0,-4]
+1
+```
+
+---
+
+## 🔍 Approach & Intuition
+
+> This problem primarily involves **Hash Table** techniques.
+> The key insight is to leverage `O(n)` time complexity
+> by applying hash table to efficiently reach the solution.
+> Space usage is kept at `O(n)` by optimizing auxiliary structures.
+
+---
+
+<div align="center">
+
+*Part of my [dsa-everyday](https://github.com/MridulSharma02/dsa-everyday) journey*
+*🔥 Consistency is the key to mastery*
+
+</div>
